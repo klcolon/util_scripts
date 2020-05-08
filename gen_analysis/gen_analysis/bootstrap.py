@@ -10,7 +10,7 @@ def draw_bs_reps_median(data, size=1):
     """Draw boostrap replicates of the median from 1D data set."""
     out = np.empty(size)
     for i in range(size):
-        out[i] = np.mean(draw_bs_sample(data))
+        out[i] = np.median(draw_bs_sample(data))
     return out 
 
 def confidence_interval(data):
