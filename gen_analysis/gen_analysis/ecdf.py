@@ -9,12 +9,14 @@ def ecdf(data, label):
     data = 1D array
     label = string
     
+    Returns 
+    Pandas dataframe with ecdf values, labels, and x values
     """
     
     data = data[~np.isnan(data)]
     ecdf = pd.DataFrame(np.arange(1, len(data)+1) / len(data))
     ecdf['Label'] = label
-    ecdf['Counts'] = np.sort(data)
-    ecdf.columns = ["ecdf", "Label", "Counts"]
+    ecdf['Values'] = np.sort(data)
+    ecdf.columns = ["ecdf", "Label", "Values"]
     
     return ecdf
