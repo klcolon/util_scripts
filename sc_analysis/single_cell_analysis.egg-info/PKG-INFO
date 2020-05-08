@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: single-cell-analysis
+Version: 0.0.2
+Summary: A package for feature barcode and single cell analysis from single cell data
+Home-page: UNKNOWN
+Author: Katsuya Colón
+Author-email: kcolon@caltech.edu
+License: UNKNOWN
+Description: """This package has modules for further analysis of feature barcodes from single cell data and other modules to make data processing easier"""
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Description-Content-Type: ext/markdown
