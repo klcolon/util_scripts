@@ -8,11 +8,11 @@ __version__ = "0.0.3"
 __email__ = "kcolon@caltech.edu"
 
 setup(
-    name='single_cell_analysis',
+    name='general data analysis',
     version=__version__ ,
     author=__author__ ,
     author_email=__email__ ,
-    description='A package for feature barcode and single cell analysis from single cell data',
+    description='A package for general data analysis',
     long_description=long_description,
     long_description_content_type='ext/markdown',
     packages=find_packages(),
