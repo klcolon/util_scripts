@@ -1,5 +1,7 @@
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 def ecdf(data, label):
     """Calculates ecdf from a 1D array
@@ -46,3 +48,4 @@ def plot(data, label):
     #plot
     for i in range(len(ecdf_list)):
         plt.step(ecdf_list[i]["Values"], ecdf_list[i]["ecdf"], linewidth = 1)
+    sns.despine()
