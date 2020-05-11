@@ -20,3 +20,29 @@ def ecdf(data, label):
     ecdf.columns = ["ecdf", "Label", "Values"]
     
     return ecdf
+
+def plot(data, label):
+    """generates ecdf plots
+    
+    Parameters
+    ----------
+    data = tidy data with values in one column and labels in another
+    label = column name with categories
+    
+    Returns 
+    ecdf plot using matplotlib
+    """
+    
+    #obtain unique values
+    labels = data[label].unique()
+    
+    #calculate ecdf for every label
+    ecdf_list = []
+    for i in labels:
+        sliced_data = data.loc[data[label] == i].values
+        ecdf_val = ecdf(sliced_data, i)
+        ecdf_list.append(ecdf_val)
+    
+    #plot
+    for i in range(len(ecdf_list)):
+        plt.step(ecdf_list[i]["Values"], ecdf_list[i]["ecdf"], linewidth = 1)
