@@ -47,5 +47,7 @@ def plot(data, label):
     
     #plot
     for i in range(len(ecdf_list)):
-        plt.step(ecdf_list[i]["Values"], ecdf_list[i]["ecdf"], linewidth = 1)
+        plt.step(ecdf_list[i]["Values"], ecdf_list[i]["ecdf"], linewidth = 1, 
+                 label = ecdf_list[i]["Label"][0])
+    plt.legend()
     sns.despine()
