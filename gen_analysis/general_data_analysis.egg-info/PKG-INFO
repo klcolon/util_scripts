@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: general-data-analysis
+Version: 0.0.3
+Summary: A package for general data analysis
+Home-page: UNKNOWN
+Author: Katsuya Colón
+Author-email: kcolon@caltech.edu
+License: UNKNOWN
+Description: "This package includes python scripts for general data analysis purposes."
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Description-Content-Type: ext/markdown
