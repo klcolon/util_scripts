@@ -1,8 +1,5 @@
 import numpy as np
 import pandas as pd
-import numba
-
-@numba.njit
 
 def ecdf(x, data):
     """Give the value of an ECDF at arbitrary points x.
