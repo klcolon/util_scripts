@@ -24,7 +24,7 @@ class ecdf:
 
         return ecdf
 
-    def plot(data, label_column, val_column):
+    def plot(data, label_column, val_column, color = None):
         """generates ecdf plots
 
         Parameters
@@ -32,6 +32,7 @@ class ecdf:
         data = tidy data with values in one column and labels in another
         label_column = column name with categories
         value_column = column name with values
+        color = list
 
         Returns 
         ecdf plot using matplotlib
@@ -50,6 +51,8 @@ class ecdf:
         #plot
         for i in range(len(ecdf_list)):
             plt.step(ecdf_list[i]["Values"], ecdf_list[i]["ecdf"], linewidth = 2, 
-                     label = ecdf_list[i]["Label"][0])
+                     label = ecdf_list[i]["Label"][0], color = color[i])
         plt.legend()
         sns.despine()
+
+            
