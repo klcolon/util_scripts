@@ -26,4 +26,4 @@ def dkw_conf_int(x, data, alpha):
     lower_bound = np.maximum(0, ecdf_y - epsilon)
     upper_bound = np.minimum(1, ecdf_y + epsilon)
     
-    return lower_bound, upper_bound
+    return np.sort(lower_bound), np.sort(upper_bound)
