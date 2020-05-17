@@ -19,7 +19,7 @@ def dkw_conf_int(x, data, alpha):
     data = data used to generate ecdf
     alpha = confidence interval"""
     
-    epsilon = np.sqrt(np.log(2/alpha) / 2 / len(data))
+    epsilon = np.sqrt(np.log(2/alpha) / (2*len(data)))
 
     ecdf_y = ecdf(x, data)
 
