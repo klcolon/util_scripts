@@ -4,7 +4,7 @@ with open("README.md", "r") as f:
     long_description = f.read()
 
 __author__ = "Katsuya Colón"
-__version__ = "0.0.2"
+__version__ = "0.0.3"
 __email__ = "kcolon@caltech.edu"
 
 setup(
