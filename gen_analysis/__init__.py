@@ -6,3 +6,4 @@ from .jaccard_index import *
 from .norm_hist import *
 from .l1_norm import *
 from .cohens_d import *
+from .intersect import *
