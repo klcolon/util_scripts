@@ -23,11 +23,56 @@ To install packages, go to the gen_analysis folder and `pip install -e .`.
   -This module can find distinct sets between all possible sample combinations. This function will output a pandas dataframe containing samples being compared, list of unique matches within the compared groups, and the total number of unique elements. Additionally, upset plots can be generated and the corresponding data structure used to generate the plot will also be outputted.
   
  # Documentation
- ```import gen_analysis as gn
- gn.bootstrap.draw_sample(data)
+ ```
+ class gen_analysis.bootstrap.draw_sample(data)
  
  Parameters
  ----------
- data = 1D numpy array
+ data = 1D array
+ ```
+ ```
+ class gen_analysis.bootstrap.draw_reps(data, test_statistic = "mean", size=1)
  
+Parameters
+----------
+data = 1D dataset
+test_statistic = median or mean
+size = integer
+ ``` 
+  ```
+gen_analysis.cohens_d(x,y)
+ 
+Parameters
+----------
+x = array
+y = array
+ ``` 
+```
+gen_analysis.dkw_conf_int(x, data, alpha)
+ 
+Parameters
+----------
+x = array or int or float
+data = data used to generate ecdf
+alpha = confidence interval
+ ``` 
+ ```
+class gen_analysis.ecdf.values(data, label)
+ 
+Parameters
+----------
+data = 1D array
+label = string
+ ``` 
+ ```
+class gen_analysis.ecdf.plot(data, label_column, val_column, conf = False, color = None)
+ 
+Parameters
+----------
+data = tidy data with values in one column and labels in another
+label_column = column name with categories
+value_column = column name with values
+color = list
+conf = bool
+ ``` 
  
