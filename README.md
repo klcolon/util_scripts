@@ -24,8 +24,10 @@ To install packages, go to the gen_analysis folder and `pip install -e .`.
   
  # Documentation
  ```import gen_analysis as gn
- 
  gn.bootstrap.draw_sample(data)
+ 
  Parameters
  ----------
- data = 1D numpy array```
+ data = 1D numpy array
+ 
+ 
