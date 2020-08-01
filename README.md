@@ -23,4 +23,9 @@ To install packages, go to the gen_analysis folder and `pip install -e .`.
   -This module can find distinct sets between all possible sample combinations. This function will output a pandas dataframe containing samples being compared, list of unique matches within the compared groups, and the total number of unique elements. Additionally, upset plots can be generated and the corresponding data structure used to generate the plot will also be outputted.
   
  # Documentation
- ...
+ `import gen_analysis as gn
+ 
+ gn.bootstrap.draw_sample(data)
+ Parameters
+ ----------
+ data = 1D numpy array`
