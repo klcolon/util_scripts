@@ -4,10 +4,9 @@ from itertools import combinations
 from upsetplot import from_memberships
 from upsetplot import plot
 import matplotlib.pyplot as plt
-%config InlineBackend.figure_format='retina'
 
 def intersect(data, upset_plot = False):
-    """A function that returns all possible intersections and generates an upset plot
+    """A function that returns all possible distinct intersections and generates an upset plot
     Parameters
     ----------
     data = pandas dataframe
@@ -39,19 +38,44 @@ def intersect(data, upset_plot = False):
     
     print("Total unique number of items", tot_elements)
 
-    #intersect data and drop na
+    
+    #make dictionary for unique elements 
+    dict_ = {}
+    for i in range(len(col_names)):
+        dict_.update({col_names[i]: unique_elem[i]})
+
+    #intersect data, find distinct sets, drop na
     list_intersect = []
     for i in comb_list:
         for j in i:
             if len(j) == 2:
-                func = "set(df['{x}'].dropna().to_list()).intersection(df['{y}'].dropna().to_list())".format(x = j[0], y = j[1])
-                list_intersect.append([j,list(eval(func)), len(list(eval(func)))])
+                func_1 = "set(data['{x}'].dropna().to_list()).intersection(data['{y}'].dropna().to_list())".format(x = j[0], y = j[1])
+                inter = eval(func_1)
+                dict_adj = []
+                for i, k in dict_.items():  
+                    if i != j[0] and i != j[1]:
+                        dict_adj.append(k) 
+                for i in dict_adj:
+                    unique = inter - i
+                    inter = unique
+                list_intersect.append([j,list(inter), len(list(inter))])
             else:
-                func = "set(df['{x}'].dropna().to_list()).intersection(df['{y}'].dropna().to_list())".format(x = j[0], y = j[1])
+                func_2 = "set(data['{x}'].dropna().to_list()).intersection(data['{y}'].dropna().to_list())".format(x = j[0], y = j[1])
+                cond = "i != j[0] and i != j[1]"
                 for _ in range(2,len(j)):
-                    decor = ".intersection(df['{z}'].dropna().to_list())".format(z = j[_])
-                    func = func + decor
-                list_intersect.append([j,list(eval(func)), len(list(eval(func)))])
+                    decor_1 = ".intersection(data['{z}'].dropna().to_list())".format(z = j[_])
+                    decor_2 = " and i != j[{x}]".format(x = _)
+                    func_2 = func_2 + decor_1
+                    cond = cond + decor_2
+                inter = eval(func_2)
+                dict_adj = []
+                for i, k in dict_.items():  
+                    if eval(cond):
+                        dict_adj.append(k) 
+                for i in dict_adj:
+                    unique = inter - i
+                    inter = unique
+                list_intersect.append([j,list(inter), len(list(inter))])
 
     #obtain elements found only in individual datasets
     for j in range(len(col_names)):
@@ -84,4 +108,4 @@ def intersect(data, upset_plot = False):
     if upset_plot == True:
         plot(upset)
     
-    return df_3, upset
+    return df_3, upset 
