@@ -1,5 +1,5 @@
 # Data-Analysis
-This repository contains packages for basic statistics and processing tools for biological data. *Additionally, functions for proteomic and transcriptomic analysis will be added soon.
+This repository contains packages for basic statistics and processing tools for biological data. *Additionally, functions for proteomic and transcriptomic analysis will be added soon.*
 To install packages, go to the gen_analysis folder and `pip install -e .`.
 
 # Available Modules 
