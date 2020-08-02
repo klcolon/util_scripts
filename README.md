@@ -3,12 +3,12 @@ This repository contains packages for basic statistics and processing tools for 
 To install package, go to the gen_analysis folder and `pip install -e .`.
 
 # Dependencies
--numpy == 1.19.0
--pandas == 1.0.1
--matplotlib == 3.1.3
--seaborn == 0.10.0
--upsetplot == 0.4.0
--more-itertools == 8.2.0
+* numpy == 1.19.0
+* pandas == 1.0.1
+* matplotlib == 3.1.3
+* seaborn == 0.10.0
+* upsetplot == 0.4.0
+* more-itertools == 8.2.0
 
 # Available Modules 
 - **bootstrap**
