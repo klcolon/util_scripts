@@ -75,4 +75,69 @@ value_column = column name with values
 color = list
 conf = bool
  ``` 
+ ```
+gen_analysis.intersect(data, upset_plot = False)
  
+Parameters
+----------
+data = pandas dataframe
+upset_plot = boolean
+ ``` 
+ ```
+gen_analysis.jaccard_index(list_1, list_2)
+ 
+Parameters
+----------
+list_1 = first list
+list_2 = second list
+ ``` 
+ ```
+class gen_analysis.l1norm_genes.l1norm_single(arr1, arr2, nbins)
+ 
+Parameters
+----------
+arr1 : sparse matrix
+  Matrix of first subpopulation
+arr2 : sparse matrix
+  Matrix of second subpopulation
+nbins : int
+  Number of histogram bins to use
+ ``` 
+ ```
+class gen_analysis.l1norm_genes.l1norm_all(test, control, nbins)
+ 
+Parameters
+----------
+test = array or matrix
+control = array or matrix
+nbins = int
+ ``` 
+ ```
+gen_analysis.hist(ref, test, nbins, label_ref, label_test)
+ 
+Parameters
+----------
+ref = 1D array
+test = 1D array
+nbins = integer
+label_ref = string
+label_test = string
+ ```
+ ```
+class gen_analysis.permutation.draw_sample(x,y)
+ 
+Parameters
+----------
+x = 1D array
+y = 1D array
+ ```
+ ```
+class gen_analysis.permutation.draw_reps_diff_mean(x, y, size=1)
+ 
+Parameters
+----------
+ x = 1D array
+ y = 1D array
+ size = int
+ ```
+Still under review. 
