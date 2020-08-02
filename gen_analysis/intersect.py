@@ -17,8 +17,11 @@ def intersect(data, upset_plot = False):
     df_final = dataframe with list of matches for each comparison and counts
     upset = data formatted to generate upset plots """
 
-    #isolate column names
-    col_names = data.columns.unique()
+    #convert data column names to strings  
+    col_names = []
+    for i in data.columns:
+        col_names.append(str(i))
+    data.columns = col_names
 
     #total groups
     n = len(col_names)
