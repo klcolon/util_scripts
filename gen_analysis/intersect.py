@@ -22,7 +22,7 @@ def intersect(data, upset_plot = False):
     for i in data.columns:
         col_names.append(str(i))
     data.columns = col_names
-
+    
     #total groups
     n = len(col_names)
 
@@ -89,7 +89,7 @@ def intersect(data, upset_plot = False):
 
     #create dataframe for elements found only in individual datasets
     df_1 = pd.DataFrame(col_names)
-    df_1[1] = np.array(unique_elem, dtype=object).T
+    df_1[1] = unique_elem
     df_1[2] = [len(i) for i in unique_elem]
 
     #combine intersect data and unique elements found within individual sets
@@ -110,5 +110,5 @@ def intersect(data, upset_plot = False):
     #make upset plot
     if upset_plot == True:
         plot(upset)
-    
-    return df_3, upset 
+     
+    return df_3, upset
