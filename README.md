@@ -1,5 +1,5 @@
 # Data-Analysis
-This repository contains packages for basic statistics and processing tools for biological data. *Additionally, more functions for proteomic and transcriptomic analysis will be added soon. These will include doublet identification in single cell data by exogenous barcodes, differential single cell analysis by coefficient of variation and mean expression, and more.*
+This repository contains packages for basic statistics and processing tools for biological data. 
 To install package, go to the gen_analysis folder and `pip install -e .`.
 
 # Dependencies
