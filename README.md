@@ -1,6 +1,6 @@
-# Data-Analysis
-This repository contains packages for basic statistics and processing tools for biological data. 
-To install package, go to the gen_analysis folder and `pip install -e .`.
+# Utility Scripts for Biological Data
+This repository various utility scripts for basic statistics and processing for biological data. 
+To install the package, go to the gen_analysis folder and `pip install -e .`.
 
 # Dependencies
 * numpy == 1.19.0
